@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript DOM</title>
+    <style>
+        body {
+            user-select: none;
+            background-color: rgb(206, 206, 210);
+        }
+
+        div#area {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            width: 700px;
+            height: 700px;
+            line-height: 700px;
+            background-color: #ffb300;
+            text-align: center;
+            font-size: 70px;
+            margin: 110px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="area" ondblclick="double()">
+        Javascript
+    </div>
+
+
+
+    <script>
+
+        var a = window.document.getElementById('area')
+        var b = window.document.querySelector('body')
+
+        a.addEventListener('click', clicar)
+        a.addEventListener('mouseenter', inside)
+        a.addEventListener('mouseout', outside)
+        a.addEventListener('dblclick', double)
+
+        function clicar() {
+            a.style.backgroundColor = '#000000'
+            a.style.color = 'white'
+            a.innerHTML = 'It&#146;s amazing'
+            a.style.transitionDuration = '0.7s'
+        }
+
+        function inside() {
+            a.style.borderRadius = '350px';
+            a.style.transitionDuration = '0.7s'
+        }
+
+        function outside() {
+            b.style.padding = '45px'
+            b.style.backgroundColor = '#0C1618'
+            b.style.transitionDuration = '1.5s'
+        }
+
+        function double() {
+            b.style.rotate = '360deg'
+            b.style.transitionDuration = '3.0s'
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>
